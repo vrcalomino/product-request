@@ -1,6 +1,6 @@
 package com.request.product.config;
 
-import com.request.product.model.ProductRequest;
+import com.request.product.model.RequestInformation;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -30,7 +30,7 @@ public class RabbitMQConfig {
     public MessageConverter jsonToMapMessageConverter(){
         Jackson2JsonMessageConverter converter = new Jackson2JsonMessageConverter();
         DefaultClassMapper classMapper = new DefaultClassMapper();
-        classMapper.setDefaultType(ProductRequest.class);
+        classMapper.setDefaultType(RequestInformation.class);
         converter.setClassMapper(classMapper);
         classMapper.setTrustedPackages("com.request.product.model");
         return converter;

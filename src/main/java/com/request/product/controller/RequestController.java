@@ -1,6 +1,6 @@
 package com.request.product.controller;
 
-import com.request.product.dto.RequestInformation;
+import com.request.product.model.RequestInformation;
 import com.request.product.service.IRabbitMQSender;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

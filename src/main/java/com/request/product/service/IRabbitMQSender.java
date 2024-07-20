@@ -1,6 +1,6 @@
 package com.request.product.service;
 
-import com.request.product.dto.RequestInformation;
+import com.request.product.model.RequestInformation;
 
 public interface IRabbitMQSender {
 
