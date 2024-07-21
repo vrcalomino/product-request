@@ -4,5 +4,5 @@ import com.request.product.model.RequestInformation;
 
 public interface IRabbitMQSender {
 
-    void send(RequestInformation requestInformation);
+    void send(RequestInformation requestInformation) throws Exception;
 }

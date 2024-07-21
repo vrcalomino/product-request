@@ -21,7 +21,11 @@ public class RequestController {
 
     @PostMapping("/request")
     public ResponseEntity<String> sendProductRequest(@RequestBody RequestInformation requestInformation) {
-        rabbitMQSender.send(requestInformation);
-        return new ResponseEntity<>("Request sent!", HttpStatus.OK);
+        try {
+            rabbitMQSender.send(requestInformation);
+            return new ResponseEntity<>("Request sent!", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 }

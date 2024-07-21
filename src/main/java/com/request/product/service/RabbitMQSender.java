@@ -14,7 +14,10 @@ public class RabbitMQSender implements IRabbitMQSender{
         this.rabbitTemplate = rabbitTemplate;;
     }
 
-    public void send(RequestInformation requestInformation) {
+    public void send(RequestInformation requestInformation) throws Exception {
+        if (requestInformation == null || requestInformation.getEmail() == null || requestInformation.getProduct_id() == null) {
+            throw new Exception("Missing or incorrect request information");
+        }
         rabbitTemplate.convertAndSend(RabbitMQConfig.QUEUE_NAME, requestInformation);
     }
 }
