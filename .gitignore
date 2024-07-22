@@ -1,8 +1,5 @@
-HELP.md
 target/
 .mvn
-mvnw.cmd
-mvnw
 !**/src/main/**/target/
 !**/src/test/**/target/
 .env
